@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Weather app</title>
+</head>
+<body>
+    <!--div that containes everything, y marginj 5 my-5 and left and right auto margin mx-auto-->
+
+    <div class="container my-5 mx-auto">
+    <!--text-muted makes text bit faded almost grey, text-center to centralize text, margin 4 in y direction my-4-->
+    <h1 class="text-muted text-center my-4">Weather update</h1>
+
+    <!--we need some kind of form for an input field to search location of weather to look up, y margin 4, change-location is own class here-->
+    <form class="change-location my-4 text-center text-muted">
+        <label for="city">Enter a location for weather information</label>
+        <!--name attribute below should be same as for attribute, for in a lablel will automatically connect to name in input-->
+        <!--form-control is a bootstrap class just to style a bit p-4 padding in all directions of strength 4-->
+        <input type="text" name="city" class="form-control p-4">
+    </form>
+
+    <!-- a div responsible for outputting the card the information about the weather , show picture of day or night , show weather icon , show city, the weather condition-->
+    <!-- temperature etc, class shadow-lg lg for large screen and up shadow class gives a bit of box shadow,  and rounded class to round the corners -->
+    <!--d-none bootstrap class to diaplay none --> 
+     <div class="card shadow-lg rounded d-none">
+        <!--needs an image here could be day or night, dynamically injected depending on the time of the city we look up , so for now we need just a placeholder for image-->
+        <!--placeholder.com, via.placeholder.com/size, time is our own class to inject the image source into this card-img is bootstrap class to style this image -->
+        <img src="https://via.placeholder.com/400x300" class="time card-img-top">
+        <!--div for the weather like cloud or sun or rain drops etc, icon class is own class mx auto margin left and right auto here icon class is wrapper to img  -->
+        <div class="icon bg-light mx-auto text-center"> 
+            <!--  place the icon here is it   -->
+              <img src="" alt="">
+        </div>
+        <!-- we need in this div city name , is it raining, clouds, humid, temperature div to surround all these things  -->
+         <div class="text-muted text-uppercase text-center details">
+            <!--inject city name later via js -->
+            <h5 class="my-3">City name</h5>
+            <div class="my-3">Weather condition</div> <!--rainy cloudy -->
+            <div class="display-4 my-4">
+                <span>temperature</span>
+                <span>&deg;C</span>
+            </div>
+         </div>
+
+     </div>
+
+    </div>
+
+    <script src="scripts/forcast.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
