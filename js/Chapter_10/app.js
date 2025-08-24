@@ -49,6 +49,9 @@ const filterTodos = (term) => {
     });
     // list.children is html collection cant use for each , filter methjod will go through all the elements in array Array.from(list.children), and fire the call back fn for each elemnt
     // filter method returns a new array , that new array is goint to be whatever items we keep in it, we keep an item in the array by returning true, we filter out an item by returning false 
+    // if you had typed a term previously and that had caused some elements to be .filtered u need to remove that .filetered for the currently typed
+    // so every time a term is typed 2 actions are mandatory , every time add .filtered to non matching to hide
+    // everytime remove .filtered to matching to be visible again 
     Array.from(list.children)
     .filter((todo) => { // todo is nothing but every li tag and todo.textContent will extract text inside span even though we apply on li tag, text inside span is extracted 
         return todo.textContent.toLowerCase().includes(term) // so the new array returned by filer method will have all elms which do not include the term/typed text 
