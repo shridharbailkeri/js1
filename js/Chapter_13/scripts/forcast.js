@@ -41,7 +41,7 @@ class Forecast{
         const query = `${city_key}?apikey=${this.key}`;
     
         const response = await fetch(this.weatherUri + query);
-    
+        //The .json() method reads the body of the HTTP response and tries to parse it as JSON.
         const data = await response.json();
     
         //console.log(data);
